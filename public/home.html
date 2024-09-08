@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+<style>
+    /*
+Hi!
+This code creates a classic navigation menu with a fill color that increases on mouseover.
+Feel free to change and add items to the menu, change colors, size and anything you want.
+Don't forget to tell me what you think about it!
+Jasmine
+*/
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    border: 2px solid #2e8b57;
+    border-radius: 20px;
+    color: #2e8b57;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+.menu ul li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #2e8b57;
+    transition: all 0.3s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1;
+    filter: blur(20px);
+}
+
+.menu ul li:hover a::before,
+.menu ul li.active a::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.menu ul li:hover a,
+.menu ul li.active a {
+    color: white;
+}
+
+.menu ul li.active a {
+    color: white;
+}
+
+.menu ul li a:hover {
+    color: white;
+}
+
+.menu ul li:hover a::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+</style>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    <script src="index.js"></script>
+</body>
+</html>
